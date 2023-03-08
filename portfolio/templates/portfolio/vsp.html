@@ -2,52 +2,113 @@
 
 {% load static %}
 
+
 {% block content %}
-<div class="row justify-content-center my-3">
+<div class="d-flex row justify-content-center my-3 flex-wrap" id="accordions">
     <div class="col-4">
         <p>
-            <a class="btn btn-primary" data-bs-toggle="collapse" data-bs-toggle="tooltip" href="#collapseExample"
-               role="button"
-               aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom"
-               title="Для просмотра на другом языке необходимо отжать кнопку, выбранного языка">
-                На русском
-            </a>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" ata-bs-toggle="tooltip"
+                    data-bs-target="#collapseExample3"
+                    aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom"
+                    title="Дзеля прагляду на iншай мове трэба адцiснуць кнопку, выбраннай мовы">
+                Па-беларуску
+            </button>
+
             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-toggle="tooltip"
                     data-bs-target="#collapseExample2"
                     aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom"
                     title="To view in another language, you must release the button of the selected language">
                 In English
             </button>
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" ata-bs-toggle="tooltip" data-bs-target="#collapseExample3"
-                    aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom"
-               title="Дзеля прагляду на iншай мове трэба адцiснуць кнопку, выбраннай мовы">
-                Па-беларуску
-            </button>
+            <a class="btn btn-primary" data-bs-toggle="collapse" data-bs-toggle="tooltip" href="#collapseExample"
+               role="button"
+               aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom"
+               title="Для просмотра на другом языке необходимо отжать кнопку, выбранного языка">
+                На русском
+            </a>
         </p>
     </div>
-</div>
+
+    <div class="collapse" id="collapseExample3" data-bs-parent="#accordions">
+        <div class="card card-body">
+            {% block content_by_version %}
+            Па-Беларуску Одной из главных задач, которые выполняло учреждение, в котором когда-то я работал,
+            {% endblock %}
+        </div>
+    </div>
+    <div class="collapse" id="collapseExample2" data-bs-parent="#accordions">
+        <div class="card card-body">
+            {% block content_en_version %}To English
+            {% endblock %}
+        </div>
+    </div>
+    <div class="collapse" id="collapseExample" data-bs-parent="#accordions">
+        <div class="card card-body">
+            {% block content_ru_version %}Одной из главных задач, которые выполняло учреждение, в котором когда-то я
+            работал,
+            {% endblock %}
+        </div>
+    </div>
 
 
-<div class="collapse" id="collapseExample">
-    <div class="card card-body">
-        {% block content_ru_version %}Одной из главных задач, которые выполняло учреждение, в котором когда-то я
-        работал,
-        {% endblock %}
-    </div>
 </div>
-<div class="collapse" id="collapseExample2">
-    <div class="card card-body">
-        {% block content_en_version %}To English
-        {% endblock %}
-    </div>
-</div>
-<div class="collapse" id="collapseExample3">
-    <div class="card card-body">
-        {% block content_by_version %}
-        Па-Беларуску Одной из главных задач, которые выполняло учреждение, в котором когда-то я работал,
-        {% endblock %}
-    </div>
-</div>
+<!--<div class="d-flex justify-content-evenly align-items-center m-3 flex-wrap" id="accordion">-->
+
+<!--    <div class="card col-md-3 m-2 p-2 text-center border border-dark-subtle rounded bg-primary-subtle" style="max-width:350px">-->
+<!--        <img class="card-img-top mx-auto my-2" src="#" style="max-width:300px">-->
+<!--        <div class="card-body text-center">-->
+<!--            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#div1" aria-expanded="false" aria-controls="div1" >-->
+<!--                Colllapsable Div1-->
+<!--            </button>-->
+<!--            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#div2" aria-expanded="false" aria-controls="div2" >-->
+<!--                Colllapsable Div2-->
+<!--            </button>-->
+
+<!--            <div class="collapse" id="div1" data-bs-parent="#accordion">-->
+<!--                <ul class="list-unstyled text-center">-->
+<!--                    <li>Item1</li>-->
+<!--                    <li>Item2</li>-->
+<!--                    <li>Item3</li>-->
+<!--                    <li>Item4</li>-->
+<!--                    <li>Item5</li>-->
+<!--                    <li>Item6</li>-->
+<!--                    <li>Item7</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+<!--            <div class="collapse" id="div2" data-bs-parent="#accordion">-->
+<!--                <ul class="list-unstyled text-center">-->
+<!--                    <li>Item21</li>-->
+<!--                    <li>Item22</li>-->
+<!--                    <li>Item23</li>-->
+<!--                    <li>Item2</li>-->
+<!--                    <li>Item25</li>-->
+<!--                    <li>Item26</li>-->
+<!--                    <li>Item27</li>-->
+<!--                </ul>-->
+
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="card col-md-3 m-2 p-2 text-center border border-dark-subtle rounded bg-primary-subtle" style="max-width:350px">-->
+<!--        <img class="card-img-top mx-auto my-2" src="#" style="max-width:300px">-->
+<!--        <div class="card-body text-center">-->
+<!--            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#div2" aria-expanded="false" aria-controls="div2" >-->
+<!--                Colllapsable Div2-->
+<!--            </button>-->
+<!--            <div class="collapse" id="div2" data-bs-parent="#accordion">-->
+<!--                <ul class="list-unstyled text-center">-->
+<!--                    <li>Item21</li>-->
+<!--                    <li>Item22</li>-->
+<!--                    <li>Item23</li>-->
+<!--                    <li>Item2</li>-->
+<!--                    <li>Item25</li>-->
+<!--                    <li>Item26</li>-->
+<!--                    <li>Item27</li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
 {% endblock%}
