@@ -52,5 +52,5 @@ msgstr "Блог"
 msgid "Portfolio"
 msgstr "Портфолио"
 
-msgid "My projects in VBA"
-msgstr "Мои проекты в VBA"
+msgid "Change Language"
+msgstr "Изменить язык"

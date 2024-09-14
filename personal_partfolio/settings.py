@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'modeltranslation',
     'blog',
     'portfolio',
 ]
@@ -121,6 +122,8 @@ LANGUAGES = [
     ('be', 'Беларуская'),
     ('ru', 'Русский'),
 ]
+# настройка django-modeltranslation
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 # Папка для файлаў перакладу
 LOCALE_PATHS = [

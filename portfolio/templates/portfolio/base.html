@@ -41,6 +41,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
                         <li class="nav-item">
+                            <a class="nav-link active btn-lg" aria-current="page" href="{% url 'home' %}">
+                                <div class="badge bg-primary text-wrap " style="width: 6rem;">
+                                  {% trans "Home page" %}
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="https://drive.google.com/file/d/10JX4D2dx1tffM94wqTEWOP3y0LV_2Wv2/view?usp=drive_link" target="_blank">
                             {% trans "My Resume" %}
                             </a>
@@ -52,7 +59,11 @@
                             <a class="nav-link" href="https://www.facebook.com/iv.shalygin" target="_blank">{% trans "Facebook" %}</a>
                         </li>
                         <li class="nav-item">
-                            <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">{% trans "Blog" %}</a>
+                            <a class="nav-link"  href="{% url 'blog:all_blogs' %}" class="btn btn-primary">
+                                <div class="badge bg-primary text-wrap" style="width: 6rem;">
+                                    {% trans "Blog" %}
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>

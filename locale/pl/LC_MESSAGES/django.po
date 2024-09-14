@@ -52,5 +52,5 @@ msgstr "Blog"
 msgid "Portfolio"
 msgstr "Portfolio"
 
-msgid "My projects in VBA"
-msgstr "Moje projekty w VBA"
+msgid "Change Language"
+msgstr "Zmień język"
