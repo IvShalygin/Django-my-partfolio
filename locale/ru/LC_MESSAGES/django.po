@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-11 21:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\blog\templates\blog\all_blogs.html:4
+msgid "Hello all, this is my blog ^)"
+msgstr "Привет всем, это мой блог ^)"
+
+#: .\blog\templates\blog\all_blogs.html:7
+#, python-format
+msgid ""
+"\n"
+"            Jan has written %(blogi_count)s blog.\n"
+"        "
+msgid_plural ""
+"\n"
+"            Jan has written %(blogi_count)s blogs.\n"
+"        "
+msgstr[0] "            Иван написал %(blogi_count)s блог.\n"
+msgstr[1] "            Иван написал %(blogi_count)s блогов.\n"
+
+msgid "Jan Shalygin is a wonderful person, making it a joy to both live and work with him"
+msgstr "Иван Шалыгин — замечательный человек, с ним приятно и жить, и работать."
+
+msgid "Jan Shalygin"
+msgstr "Иван Шалыгин"
+
+msgid "My Resume"
+msgstr "Моё резюме"
+
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Portfolio"
+msgstr "Портфолио"
+
+msgid "My projects in VBA"
+msgstr "Мои проекты в VBA"
