@@ -50,7 +50,7 @@ msgid "Blog"
 msgstr "Блог"
 
 msgid "Portfolio"
-msgstr "Партфоліа"
+msgstr "Партфоліё"
 
 msgid "Change Language"
 msgstr "Змяніць мову"

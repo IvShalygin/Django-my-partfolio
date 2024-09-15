@@ -5,13 +5,20 @@
 
 {% block content %}
 <div class="d-flex row justify-content-center my-3 flex-wrap" id="accordions">
-    <div class="col-4">
+    <div class="col-5">
         <p>
             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" ata-bs-toggle="tooltip"
                     data-bs-target="#collapseExample3"
                     aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom"
                     title="Дзеля прагляду на iншай мове трэба адцiснуць кнопку, выбраннай мовы">
                 Па-беларуску
+            </button>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" ata-bs-toggle="tooltip"
+                    data-bs-target="#collapseExample4"
+                    aria-expanded="false" aria-controls="collapseExample" data-bs-placement="bottom"
+                    title="Aby wyświetlić w innym języku, naciśnij przycisk wybranego języka">
+                W języku polskim
             </button>
 
             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-toggle="tooltip"
@@ -32,20 +39,28 @@
     <div class="collapse" id="collapseExample3" data-bs-parent="#accordions">
         <div class="card card-body">
             {% block content_by_version %}
-            Па-Беларуску Одной из главных задач, которые выполняло учреждение, в котором когда-то я работал,
+                Па-Беларуску Одной из главных задач, которые выполняло учреждение, в котором когда-то я работал,
+            {% endblock %}
+        </div>
+    </div>
+    <div class="collapse" id="collapseExample4" data-bs-parent="#accordions">
+        <div class="card card-body">
+            {% block content_pl_version %}
+                W języku polskim. Jednym z głównych zadań realizowanych przez instytucję, w której kiedyś pracowałem, było
             {% endblock %}
         </div>
     </div>
     <div class="collapse" id="collapseExample2" data-bs-parent="#accordions">
         <div class="card card-body">
-            {% block content_en_version %}To English
+            {% block content_en_version %}
+                To English
             {% endblock %}
         </div>
     </div>
     <div class="collapse" id="collapseExample" data-bs-parent="#accordions">
         <div class="card card-body">
-            {% block content_ru_version %}Одной из главных задач, которые выполняло учреждение, в котором когда-то я
-            работал,
+            {% block content_ru_version %}
+                Одной из главных задач, которые выполняло учреждение, в котором когда-то я работал,
             {% endblock %}
         </div>
     </div>

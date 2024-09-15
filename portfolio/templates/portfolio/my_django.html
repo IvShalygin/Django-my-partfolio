@@ -2,37 +2,172 @@
 
 {% load static %}
 
+{% block content_pl_version %}
+
+<p align="justify">Bardzo lubię język Python. I bardzo mi się podoba Django. Chyba muszę o tym napisać na blogu… Nie mam
+    jeszcze wielu „projektów”. Ukończyłem jeden z kursów Pythona na stepik.org (Indywidualny kurs programowania w
+    Pythonie). Czytam artykuły na Telegramie i w Internecie. Próbowałem też sił na CheckiO.org i ćwiczę na CodeWars.
+    Moja ukochana podarowała mi kurs na stepik "Django 3 - Full Stack tworzenie stron internetowych na Pythonie", dzięki
+    któremu tworzę swoje portfolio. Dziękuję jej bardzo! :-)</p>
+<p align="justify">Gdzie tak naprawdę potrzebowałem tego wszystkiego, co mi się podoba? Oczywiście, w pracy!
+    Zainteresowałem się Django, bo bardzo chciałem przerobić wszystkie swoje programy VBA na coś wygodniejszego i
+    bardziej profesjonalnego opartego na SQL (obecnie kończę kurs „Interaktywny trener SQL”). Chciałem, żeby wszystko
+    było „jak należy”. Ale okazało się, że nikt mnie nie wyśle na kursy, nikt mi nie pomoże, a na końcu okazałem się
+    niepotrzebny w swojej pracy. Ze względu na powody polityczne zostałem zwolniony z dnia na dzień, mimo że miałem
+    pięcioletnią umowę. Na moje miejsce zatrudniono znajomego głównego lekarza, chłopaka bez wykształcenia, z odległego
+    miasta od Homla.</p>
+<p align="justify">No dobrze. Czy to znaczy, że nie trzeba poznawać nowych i ciekawszych rzeczy? Oczywiście, że nie!
+    Znalazłem inną pracę :-). To było związane z administrowaniem systemami, ale cóż, Python przydaje się wszędzie!</p>
+<br>
+<h2>Zadanie 1.</h2>
+<p align="justify">W mojej poprzedniej pracy była aplikacja w Accessie, która obliczała produkty w firmie, w której
+    pracowałem. Tworzyła także pliki w formacie XML, które były importowane na trzy strony internetowe firmy oraz cennik
+    w Bitrix24. Osoba, która opracowała to oprogramowanie, przestała je wspierać. Z powodu zmian w prawie należało dodać
+    „TU” (określone litery i cyfry) do nazw wszystkich produktów. Krótko mówiąc, trzeba było wziąć cennik, dodać kolumny
+    „Nazwa”, „Oznaczenie” i „Oznaczenie liczbowe”, a następnie zapisać je z powrotem w „Nazwie”. Ponieważ już od dawna
+    chciałem spróbować bibliotek Pythona do interakcji z użytkownikiem, użyłem <b>PySimpleGUI</b>, stworzyłem formularz,
+    za pomocą <b>pandas</b> załadowałem potrzebny cennik z XML, zmodyfikowałem go i zapisałem z powrotem w XML. Potem,
+    przy pomocy <b>auto-py-to-exe</b>, skompilowałem skrypt do formatu exe, aby działał na każdym komputerze z Windows.
+    Wyszło super, o ile masz odpowiedni cennik :-)</p>
+<a class="btn btn-primary" href="{% static 'portfolio/correct.py' %}" target="_blank">Link do correct.py</a>
+<p align="center">
+    <img name="{% static 'portfolio/py_2.png' %}" src="{% static 'portfolio/py_2.png' %}" class="img-fluid"
+         height="40%">
+</p>
+
+<h2>Zadanie 2.</h2>
+<p align="justify">Z tego samego kursu. Trzeba stworzyć stronę, która generuje hasła o określonej długości z liter (duże
+    i małe), cyfr i znaków specjalnych.
+    <a href="https://github.com/IvShalygin/django4-password-generator/tree/master/password_gnerator_project"
+       target="_blank">Link do projektu na GitHub.com</a>
+</p>
+<p align="center">
+    <img name="{% static 'portfolio/dj_1.png' %}" src="{% static 'portfolio/dj_1.png' %}" class="img-fluid">
+    <img name="{% static 'portfolio/dj_2.png' %}" src="{% static 'portfolio/dj_2.png' %}" class="img-fluid">
+</p>
+<h2>Zadanie 3.</h2>
+<p align="justify">Trzeba pobrać prognozę pogody dla trzech miast (Szeremietiewo, Czerepowiec i Londyn).</p>
+<p>
+    <a href="https://replit.com/@DarkUnicorns/getweather#main.py" target="_blank">Link do rozwiązania</a>
+
+    &emsp;
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample_ex_pl" role="button" aria-expanded="false"
+       aria-controls="collapseExample">
+        Zobacz kod
+    </a>
+
+<div class="collapse" id="collapseExample_ex_pl">
+    <div class="card card-body">
+                <pre><code>
+                import requests
+
+                def get_weather(gorod: str, language: str):
+                  payload = {"3MnTq": "", "lang": language}
+                  url = f'https://wttr.in/{gorod}'
+                  response = requests.get(url, params=payload)
+                  response.raise_for_status()
+                  return response.text
+
+
+                towns = [
+                  'Sheremetevo',
+                  'Cherepovets',
+                  'London',
+                  'Gdansk'
+                ]
+                for new_town in towns:
+                  print(get_weather(new_town, 'pl'))
+                </pre>
+        </code>
+    </div>
+</div>
+</p>
+
+
+<p align="center">
+    <img name="{% static " portfolio/py_1.png" %}" src="{% static "portfolio/py_1.png" %}" height="40%"
+    class="img-fluid"> </p>
+</p>
+<h2>Zadanie 4. Najważniejsze</h2>
+<p align="justify">Mam pomysł stworzenia aplikacji w Django dla instytucji - Homelskie Centrum Higieny i Epidemiologii,
+    w której pracowałem przez 20 lat. Chcę ją stworzyć, aby zdobyć i zastosować wiedzę w praktyce. Aplikacja
+    obejmowałaby całą działalność organizacji. Uważam, że byłoby to przydatne. Dla mnie to ambitny cel. Czuję się, jak
+    dziecko przed ogromnym smokiem, ale mam swój magiczny miecz - wewnętrzne przekonanie, że muszę to zrobić, przede
+    wszystkim dla siebie. Zacząłem od projektowania bazy danych. <a class="btn btn-secondary" data-bs-toggle="collapse"
+                                                                    href="#collapseExample_base" role="button"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="collapseExample">Zobacz schemat</a>
+    Jestem na samym początku tej drogi.</p>
+<div class="collapse" id="collapseExample_base">
+    <div class="card card-body">
+        <p align="center">
+            <img name="{% static 'portfolio/Schema_base_CGE.png' %}" src="{% static 'portfolio/Schema_base_CGE.png' %}"
+                 class="img-thumbnail" height="40%">
+        </p>
+    </div>
+</div>
+<p>Stworzyłem katalog regionów, miast. Teraz tworzę katalog ulic. Praca idzie powoli, ponieważ nie wszystko jeszcze wiem
+    i nie mam dużo czasu ani energii. Ale jestem dumny z tego, co osiągnąłem, i będę dalej rozwijał moją aplikację.</p>
+<img name="{% static 'portfolio/My_app1.png' %}" src="{% static 'portfolio/My_app1.png' %}" class="img-thumbnail"
+     height="40%">
+<a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample_ex" role="button" aria-expanded="false"
+   aria-controls="collapseExample">Zobacz inne zrzuty ekranu</a>
+<div class="collapse" id="collapseExample_ex">
+    <div class="card card-body">
+        <img name="{% static 'portfolio/My_app2.png' %}" src="{% static 'portfolio/My_app2.png' %}"
+             class="img-thumbnail" height="40%">
+        <img name="{% static 'portfolio/My_app3.png' %}" src="{% static 'portfolio/My_app3.png' %}"
+             class="img-thumbnail" height="40%">
+    </div>
+</div>
+<p align="justify">Mój postęp jest odnotowywany w GoogleSheets. <a
+        href="https://docs.google.com/spreadsheets/d/1mk-VYJ1E6uzebwUrppiaUG7wp2nFHneybm0ymUsSI9g/edit?usp=drive_link"
+        target="_blank"><b>Zobacz tutaj</b></a></p>
+
+<p></p>
+<div class="d-flex justify-content-center">
+    <a href="{% url 'home' %}" class="btn btn-primary">Powrót do strony głównej</a>
+</div>
+
+{% endblock %}
+
 {% block content_ru_version %}
 <p align="justify">Мне очень нравится язык Python. И мне очень импонирует Django. Наверное, нужно будет поговорить об
-    этом в блоге… Каких-то «проектов» у меня пока мало. Я занимаюсь python on the stepik.org. Я читаю статьи в телеграмм
-    и на просторах интернета. Я взял пару баз на CheckiO.org. Любимая подарила мне курс на stepik “ Django 3 - Full
-    Stack разработка веб-сайтов на Python”, в результате которого я и создаю свое портфолио. Ей отдельное СПАСИБО! :-)
+    этом в блоге… Каких-то «проектов» у меня пока мало. Я прошел один из курсов python on the stepik.org (Инди-курс
+    программирования на Python). Я читаю статьи в телеграмм и на просторах интернета. Я взял пару баз на CheckiO.org и
+    занимаюсь на CodeWars. Любимая подарила мне курс на stepik “Django 3 - Full Stack разработка веб-сайтов на Python”,
+    в результате которого я и создаю свое портфолио. Ей отдельное СПАСИБО! :-)
 </p>
-<p align="justify">Где ж реально понадобилось мне уже все что мне нравится? Ну конечно, на работе! Я то и
+<p align="justify">Где ж реально понадобилось мне уже все, что мне нравится? Ну конечно, на работе! Я то и
     заинтересовался Django, потому что мне дико хотелось переделать все свои программы VBA, в какую-то более удобную и
-    правильную программу, завязанную на SQL, ну… знаете чтобы там все было по взрослому. А оказалось, что на курсы меня
-    никто не отправит, помогать не будет, ну а в конце то концов я оказался не нужен на своей работе, так как это им не
-    надо это вовсе, а вместо меня взяли знакомого парня, без образования с далекого города. Ладно, хорошо. Это же не
-    значит, что НЕ надо познавать интересное и более прогрессивное? Да, конечно нет! Я нашел другую работу :-). Да она
-    про администрирование, ну и что. Python надо везде!</p>
+    правильную программу, завязанную на SQL (сейчас в процессе курс "Интерактивный тренажер по SQL"), ну… знаете чтобы
+    там все было по взрослому. А оказалось, что на курсы меня никто не отправит, помогать не будет, ну а в конце то
+    концов я оказался не нужен на своей работе, по политическим мотивам, по требованию силовых структур РБ, меня уволили
+    за один день, хотя контракт со мной был подписан на пять лет. Вместо меня взяли знакомого парня главного врача, без
+    образования, из далекого от Гомеля города. </p>
+<p align="justify">Ладно, хорошо. Это же не значит, что НЕ надо познавать интересное и более прогрессивное? Да, конечно
+    нет! Я нашел другую работу :-). Она была про системное администрирование, ну и что. Python надо везде!</p>
 <br>
 <h2>Задача 1.</h2>
-<p align="justify">На моей текущей работе есть программа в Access, в которой создается обсчёт изделий, выпускаемых
-    фирмой, в которой я работаю. Так же эта программа формирует файлы в формате xml, которые импортируются на три сайта
-    фирмы и прайс товаров в Битрикс24. Так произошло, что человек, разрабатывающий это ПО, перестал его поддерживать. А
-    законодательные изменения никто не отменял, и в названии всех изделий необходимо было ввести ТУ, это такие
-    определенно сформированные буквы и цифры. Т.е. если проще, необходимо взять прайс и к столбцу «Название» приклеить
-    столбец «Маркировка» потом столбец «Численная Маркировка» и все это снова записать в «Название». А так как мне уже
-    давно хотелось попробовать в python какие-нибудь библиотеки, отвечающие за формы, то я используя <b>PySimpleGUI</b>
-    организовал форму общения с пользователем, в данном случае больше с самим собой, и используя pandas загружаю нужный
-    мне прайс из xml, модифицирую его и записываю назад в xml. Потом используя <b>auto-py-to-exe</b> я сконвертировал
-    скрипт в exe, чтобы он исполнялся на любых ПК под Win. Получилось здорово, конечно, если у тебя есть нужный прайс
-    :-)</p>
-    <a class="btn btn-primary" href="{% static "portfolio/correct.py" %}" src="{% static "portfolio/correct.py" %}"
-           target="_blank">Ссылка на correct.py</a>
-    <p align="center">
-    <img name="{% static "portfolio/dj_1.png" %}" src="{% static "portfolio/py_2.png" %}" class="img-fluid" height="40%">
-    </p>
+<p align="justify">
+    На моей прошлой работе есть программа в Access, в которой создается обсчёт изделий, выпускаемых фирмой, в которой я
+    работал. Так же эта программа формирует файлы в формате xml, которые импортируются на три сайта фирмы и прайс
+    товаров в Битрикс24. Так произошло, что человек, разрабатывающий это ПО, перестал его поддерживать. Всязи с
+    законодательными изменениями в названии всех изделий необходимо было ввести "ТУ", это такие определенно
+    сформированные буквы и цифры. То есть если проще, необходимо взять прайс и к столбцу «Название» приклеить столбец
+    «Маркировка» потом столбец «Численная Маркировка» и все это снова записать в «Название». А так как мне уже давно
+    хотелось попробовать в python какие-нибудь библиотеки, отвечающие за формы взаимодействия с пользователем, то я
+    используя <b>PySimpleGUI</b>. Организовал форму общения с пользователем, в данном случае больше с самим собой, и
+    используя <b>pandas</b> загружал нужный мне прайс из xml, модифицирую его и записываю назад в xml. Потом используя
+    <b>auto-py-to-exe</b> я сконвертировал скрипт в exe, чтобы он исполнялся на любых ПК под Win. Получилось здорово,
+    конечно, если у тебя есть нужный прайс :-)
+</p>
+<a class="btn btn-primary" href="{% static " portfolio/correct.py" %}" src="{% static "portfolio/correct.py" %}"
+target="_blank">Ссылка на correct.py</a>
+<p align="center">
+    <img name="{% static " portfolio/dj_1.png" %}" src="{% static "portfolio/py_2.png" %}" class="img-fluid"
+    height="40%">
+</p>
 
 <h2>Задача 2. </h2>
 <p align="justify">Из того самого вышеупомянутого курса. Необходимо создать сайт, генерирующий пароли заданной длинны из
@@ -47,103 +182,272 @@
 <h2>Задача 3. </h2>
 <p align="justify">Необходимо используя ресурс предоставления погоды узнать погоду в трех городах (Шереметьево,
     Череповце и Лондоне)</p>
-<a href="https://replit.com/@DarkUnicorns/getweather#main.py" target="_blank">Ссылка на ресурс решения задачи</a>
-<p align="center">
-    <img name="{% static " portfolio/py_1.png" %}" src="{% static "portfolio/py_1.png" %}" height="40%" class="img-fluid"> </p>
-<hr>
-    <div class="d-flex justify-content-center">
-        <a href="{% url 'home' %} " class="btn btn-primary">Вернуться на главную страницу</a>
+
+<p>
+    <a href="https://replit.com/@DarkUnicorns/getweather#main.py" target="_blank">Ссылка на ресурс решения задачи</a>
+    &emsp;
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample_ex1" role="button" aria-expanded="false"
+       aria-controls="collapseExample">
+        Посмотреть код
+    </a>
+
+<div class="collapse" id="collapseExample_ex1">
+    <div class="card card-body">
+                <pre><code>
+                import requests
+
+                def get_weather(gorod: str, language: str):
+                  payload = {"3MnTq": "", "lang": language}
+                  url = f'https://wttr.in/{gorod}'
+                  response = requests.get(url, params=payload)
+                  response.raise_for_status()
+                  return response.text
+
+
+                towns = [
+                  'Sheremetevo',
+                  'Cherepovets',
+                  'London',
+                  'Gdansk'
+                ]
+                for new_town in towns:
+                  print(get_weather(new_town, 'pl'))
+                </pre>
+        </code>
     </div>
+</div>
+</p>
+
+
+<p align="center">
+    <img name="{% static " portfolio/py_1.png" %}" src="{% static "portfolio/py_1.png" %}" height="40%"
+    class="img-fluid"> </p>
+<hr>
+<h2>Задача 4. Пока самая главная</h2>
+<p align="justify">Сейчас у меня есть идея написать программу на Python, используя Django, для того учреждения -
+    Гомельского Областного Центра гигиены, эпидемиологии и общественного здоровья, в котором я проработал 20 лет. Для
+    себя с целью применения знаний и получения знаний непосредственно на практике. Программы, которая бы включала всю
+    деятельность организации. На мой взгляд это было бы полезно. И для меня сейчас это амбициозная цель. Я ощущаю себя,
+    так же как ощущает себя ребенок перед огромным преогромным драконом. Но у меня есть свой волшебный меч - это
+    внутреннее чувство о том, что это необходимо сделать, в первую очередь для себя самого.
+    Я начал с проектирования базы данных.
+    <a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample_base2" role="button"
+       aria-expanded="false"
+       aria-controls="collapseExample">
+        Посмотреть схему
+    </a>
+    Нахожусь в самом начале пути.
+</p>
+<div class="collapse" id="collapseExample_base2">
+    <div class="card card-body">
+        <p align="center">
+            <img name="{% static 'portfolio/Schema_base_CGE.png' %}" src="{% static 'portfolio/Schema_base_CGE.png' %}"
+                 height="40%"
+                 class="img-thumbnail"></p>
+    </div>
+</div>
+
+Реализовал справочник Регионов, Городов. Сейчас перехожу к справочнику улиц. Разработка идет очень медленно, так как я
+многого не знаю и не так много времени и энергии. Но я горжусь тем, чего достиг и буду и дальше развивать свое приложение.</p>
+<img name="{% static 'portfolio/My_app1.png' %}" src="{% static 'portfolio/My_app1.png' %}" height="40%"
+     class="img-thumbnail">
+
+<a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample_ex2" role="button"
+   aria-expanded="false"
+   aria-controls="collapseExample">
+    Смотреть другие скриншоты программы
+</a>
+
+<div class="collapse" id="collapseExample_ex2">
+    <div class="card card-body">
+        <img name="{% static 'portfolio/My_app2.png' %}" src="{% static 'portfolio/My_app2.png' %}" height="40%"
+             class="img-thumbnail">
+        <img name="{% static 'portfolio/My_app3.png' %}" src="{% static 'portfolio/My_app3.png' %}" height="40%"
+             class="img-thumbnail">
+    </div>
+</div>
+
+
+<p></p>
+<p align="justify">
+    Свой прогресс отражаю в GoogleSheets.
+    <a href="https://docs.google.com/spreadsheets/d/1mk-VYJ1E6uzebwUrppiaUG7wp2nFHneybm0ymUsSI9g/edit?usp=drive_link"
+       target="_blank"><b>Посмотреть можно тут</b></a>
+</p>
+
+<div class="d-flex justify-content-center">
+    <a href="{% url 'home' %} " class="btn btn-primary">Вернуться на главную страницу</a>
+</div>
+
 {% endblock%}
 
 {% block content_en_version %}
-<p align="justify">I really like the Python language. And I really like Django. Probably, it will be necessary to talk about
-this is in the blog… I don't have many "projects" yet. I'm doing python on the stepik.org . I read the articles in the telegram
-and on the Internet. I took a couple of bases on CheckiO.org . My beloved gave me a course on stepik “ Django 3 - Full
-Stack development of websites in Python”, as a result of which I create my portfolio. Special THANKS to her! :-)
-</p>
-<p align="justify">Where did I really need everything I like already? Of course, at work! That's why I
-got interested in Django, because I wildly wanted to redo all my VBA programs into some more convenient and
-correct program tied to SQL, well... you know, so that everything would be grown-up there. And it turned out that the courses I
-no one will send, no one will help, well, in the end, I was not needed at my job, because they don't
-it is necessary at all, but instead of me they took a guy they knew, without an education from a distant city. Okay, good. It's not like
-does it mean that you don't need to learn interesting and more progressive things? Yes, of course not! I found another job :-). Yes, it
-'s about administration, so what. Python is needed everywhere!</p>
+<p align="justify">I really like the Python language. And I’m very fond of Django. I guess I’ll have to talk about this
+    on my blog… I don’t have many “projects” yet. I completed one of the Python courses on stepik.org (Indie Python
+    Programming Course). I read articles on Telegram and across the web. I’ve taken a couple of basics on CheckiO.org
+    and practice on CodeWars. My beloved gave me a course on stepik “Django 3 - Full Stack Web Development with Python,”
+    which is how I’m building my portfolio. A big THANK YOU to her! :-)</p>
+<p align="justify">Where did I actually need everything I like? Well, of course, at work! I became interested in Django
+    because I desperately wanted to redo all my VBA programs into something more convenient and proper, tied to SQL (I’m
+    currently taking a course on "Interactive SQL Trainer"), you know… to make it more professional. But it turned out
+    that no one would send me to courses, no one would help, and in the end, I was no longer needed at my job. For
+    political reasons, I was fired in one day, even though I had a five-year contract. They replaced me with a familiar
+    guy of the chief doctor, someone without education from a distant town far from Gomel.</p>
+<p align="justify">Alright, fine. Does that mean I shouldn’t explore interesting and progressive things? Of course not!
+    I found another job :-). It was about system administration, but so what. Python is needed everywhere!</p>
 <br>
 <h2>Task 1.</h2>
-<p align="justify">At my current job, there is a program in Access that creates a calculation of products manufactured
-by the company I work for. Also, this program generates files in xml format, which are imported to three
-company websites and a price list of products in Bitrix24. It so happened that the person developing this software stopped supporting it. And
-no one canceled the legislative changes, and in the name of all products it was necessary to enter the ONE, these are
-definitely formed letters and numbers. Ie, if it's easier, you need to take a price list and glue it to the "Name" column
-the column "Marking" then the column "Numerical Marking" and write all this again in the "Name". And since I already
-I've long wanted to try some libraries in python that are responsible for forms, then I'm using <b>PySimpleGUI</b>
-I organized a form of communication with the user, in this case more with myself, and using pandas I download
-the price I need from xml, modify it and write it back to xml. Then using <b>auto-py-to-exe</b> I converted
-the script is in exe so that it is executed on any PC under Win. It turned out great, of course, if you have the right price list :-)
+<p align="justify">In my previous job, there was an Access program that calculated products manufactured by the company
+    I worked for. This program also generated XML files that were imported to three company websites and the product
+    price list in Bitrix24. The person who developed this software stopped supporting it. Due to legislative changes, it
+    was necessary to add "TU," which are certain specified letters and numbers, to the names of all products. In short,
+    you needed to take the price list, concatenate the columns “Name,” “Label,” and “Numeric Label,” and write it all
+    back into “Name.” Since I had wanted to try out some Python libraries that handle user interactions for a while, I
+    used <b>PySimpleGUI</b> to organize the form, loaded the price list from XML using <b>pandas</b>, modified it, and
+    wrote it back into XML. Then, using <b>auto-py-to-exe</b>, I converted the script into an exe so it could run on any
+    PC with Windows. It turned out great, as long as you have the right price list :-)</p>
+<a class="btn btn-primary" href="{% static 'portfolio/correct.py' %}" target="_blank">Link to correct.py</a>
+<p align="center">
+    <img name="{% static 'portfolio/py_2.png' %}" src="{% static 'portfolio/py_2.png' %}" class="img-fluid"
+         height="40%">
 </p>
-    <a class="btn btn-primary" href="{% static "portfolio/correct.py" %}" src="{% static "portfolio/correct.py" %}"
-           target="_blank">Links to correct.py</a>
-    <p align="center">
-    <img name="{% static "portfolio/dj_1.png" %}" src="{% static "portfolio/py_2.png" %}" class="img-fluid" height="40%">
-    </p>
-
 <h2>Task 2.</h2>
-<p align="justify">From the above-mentioned course. You need to create a website that generates passwords of a given length from letters, upper lowercase, numbers and special characters
+<p align="justify">From that same course. You need to create a site that generates passwords of a specified length from
+    letters, uppercase and lowercase, numbers, and special characters.
     <a href="https://github.com/IvShalygin/django4-password-generator/tree/master/password_gnerator_project"
-       target="_blank">
-Links to project at GitHub.com</a>
+       target="_blank">Link to the project on GitHub.com</a>
+</p>
 <p align="center">
-    <img name="{% static " portfolio/dj_1.png" %}" src="{% static "portfolio/dj_1.png" %}" class="img-fluid">
-    <img name="{% static " portfolio/dj_2.png" %}" src="{% static "portfolio/dj_2.png" %}" class="img-fluid">
+    <img name="{% static 'portfolio/dj_1.png' %}" src="{% static 'portfolio/dj_1.png' %}" class="img-fluid">
+    <img name="{% static 'portfolio/dj_2.png' %}" src="{% static 'portfolio/dj_2.png' %}" class="img-fluid">
+</p>
+<h2>Task 3.</h2>
+<p align="justify">You need to use a weather service to find the weather in three cities (Sheremetyevo, Cherepovets, and
+    London).</p>
+<p><a href="https://replit.com/@DarkUnicorns/getweather#main.py" target="_blank">Link to the task solution</a>
+&emsp;
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample_ex_en" role="button" aria-expanded="false"
+       aria-controls="collapseExample">
+        View the code
+    </a>
+
+<div class="collapse" id="collapseExample_ex_en">
+    <div class="card card-body">
+                <pre><code>
+                import requests
+
+                def get_weather(gorod: str, language: str):
+                  payload = {"3MnTq": "", "lang": language}
+                  url = f'https://wttr.in/{gorod}'
+                  response = requests.get(url, params=payload)
+                  response.raise_for_status()
+                  return response.text
+
+
+                towns = [
+                  'Sheremetevo',
+                  'Cherepovets',
+                  'London',
+                  'Gdansk'
+                ]
+                for new_town in towns:
+                  print(get_weather(new_town, 'pl'))
+                </pre>
+        </code>
+    </div>
+</div>
 </p>
 
-<h2>Task 3.</h2>
-<p align="justify">It is necessary to find out the weather in three cities using the weather resource (Sheremetyevo, Cherepovets and London)</p>
-<a href="https://replit.com/@DarkUnicorns/getweather#main.py" target="_blank">Link to a resource for solving the task</a>
+
 <p align="center">
-    <img name="{% static " portfolio/py_1.png" %}" src="{% static "portfolio/py_1.png" %}" height="40%" class="img-fluid"> </p>
+    <img name="{% static " portfolio/py_1.png" %}" src="{% static "portfolio/py_1.png" %}" height="40%"
+    class="img-fluid"> </p>
 <hr>
-    <div class="d-flex justify-content-center">
-        <a href="{% url 'home' %} " class="btn btn-primary">Вернуться на главную страницу</a>
+<h2>Task 4. The Most Important One</h2>
+<p align="justify">I currently have an idea to write a program in Python using Django for the institution - the Gomel
+    Regional Center for Hygiene, Epidemiology, and Public Health, where I worked for 20 years. This is mainly for myself
+    to apply my knowledge and gain practical experience. The program would include the entire scope of the
+    organization’s activities. In my opinion, this would be useful. For me, it is an ambitious goal. I feel like a child
+    standing before a huge dragon. But I have my magical sword - an inner sense that this needs to be done, primarily
+    for myself. I’ve started by designing the database.
+<a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample_base3" role="button" aria-expanded="false"
+   aria-controls="collapseExample">See the schema</a>
+I am at the very beginning of the journey.</p>
+<div class="collapse" id="collapseExample_base3">
+    <div class="card card-body">
+        <p align="center">
+            <img name="{% static 'portfolio/Schema_base_CGE.png' %}" src="{% static 'portfolio/Schema_base_CGE.png' %}"
+                 class="img-fluid" height="40%">
+        </p>
     </div>
+</div>
+<p>I’ve implemented a directory of regions, cities. Now I’m moving on to the street directory. Development is very slow
+    since I don’t know much, and I have limited time and energy. But I’m proud of what I’ve achieved and will continue
+    to develop my application.</p>
+<img name="{% static 'portfolio/My_app1.png' %}" src="{% static 'portfolio/My_app1.png' %}" class="img-fluid"
+     height="40%">
+<a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample_ex3" role="button" aria-expanded="false"
+   aria-controls="collapseExample">See other screenshots of the program</a>
+<div class="collapse" id="collapseExample_ex3">
+    <div class="card card-body">
+        <img name="{% static 'portfolio/My_app2.png' %}" src="{% static 'portfolio/My_app2.png' %}" class="img-fluid"
+             height="40%">
+        <img name="{% static 'portfolio/My_app3.png' %}" src="{% static 'portfolio/My_app3.png' %}" class="img-fluid"
+             height="40%">
+    </div>
+</div>
+<p align="justify">
+    I track my progress in GoogleSheets.
+    <a href="https://docs.google.com/spreadsheets/d/1mk-VYJ1E6uzebwUrppiaUG7wp2nFHneybm0ymUsSI9g/edit?usp=drive_link"
+       target="_blank"><b>Check it out here</b></a>
+</p>
+<p></p>
+<div class="d-flex justify-content-center">
+    <a href="{% url 'home' %}" class="btn btn-primary">Return to the homepage</a>
+</div>
+
 {% endblock%}
 
 {% block content_by_version %}
-<p align="justify">Мне вельмі падабаецца мова Python. І мне вельмі імпануе Джанго. Напэўна, трэба будзе пагаварыць пра
-гэтым у блогу... нейкіх "праектаў" у мяне пакуль мала. Я займаюся python на stepik.org . Я чытаю артыкулы ў тэлеграм
-і на прасторах інтэрнэту. Я ўзяў пару баз на CheckiO.org. любімая падарыла мне курс на степик " Джанго 3-Поўны
-Стэк распрацоўка вэб-сайтаў на Python", у выніку якога я і ствараю сваё партфоліо. Ёй асобнае дзякуй! :-)
+<p align="justify">Мне вельмі падабаецца мова Python. І Django мне вельмі імпануе. Напэўна, трэба будзе пагаварыць пра
+    гэта ў блогу... Пакуль у мяне няшмат "праектаў". Я прайшоў адзін з курсаў па Python на stepik.org (Індывідуальны
+    курс праграмавання на Python). Чытаю артыкулы ў Telegram і ў Інтэрнэце. Я засвоіў некалькі базавых заданняў на
+    CheckiO.org і займаюся на CodeWars. Мая каханая падарыла мне курс на stepik “Django 3 - Full Stack распрацоўка
+    вэб-сайтаў на Python”, дзякуючы якому я ствараю сваё партфоліа. Яе асобна ВЯЛІКІ ДЗЯКУЙ! :-)
 </p>
-<p align="justify">Дзе ж рэальна спатрэбілася мне ўжо ўсё што мне падабаецца? Ну вядома, на працы! Я то і
-зацікавіўся Django, таму што мне дзіка хацелася перарабіць усе свае праграмы VBA, у нейкую больш зручную і
-правільную праграму, завязаную на мове SQL, ну ведаеце... каб там усё было па даросламу. А аказалася, што на курсы мяне
-ніхто не адправіць, дапамагаць не будзе, ну а ў рэшце то рэшт я апынуўся не патрэбны на сваёй працы, бо гэта ім не
-трэба гэта зусім, а замест мяне ўзялі знаёмага хлопца, без адукацыі з далёкага горада. Добра, добра. Гэта ж не
-значыць, што не трэба пазнаваць цікавае і больш прагрэсіўнае? Так, вядома не! Я знайшоў іншую працу :-). Ды яна
-пра адміністраванне, ну і што. Пітон трэба ўсюды!</p>
+<p align="justify">Дзе ж мне на самой справе спатрэбілася ўсё тое, што мне падабаецца? Вядома ж, на працы! Я зацікавіўся
+    Django, бо вельмі хацеў перарабіць усе свае VBA праграмы ў нейкую больш зручную і правільную праграму, звязаную з
+    SQL (зараз я праходжу курс "Інтэрактыўны трэнажор па SQL"). Вы ж ведаеце... каб усё было па-сур'ёзнаму. Але
+    аказалася, што мяне на курсы ніхто не адправіць, дапамагаць не будзе, а ў выніку я аказаўся непатрэбным на сваёй
+    працы з палітычных прычын. Па патрабаванні сілавых структур РБ мяне звольнілі за адзін дзень, хоць кантракт са мной
+    быў падпісаны на пяць гадоў. Замест мяне ўзялі знаёмага галоўнага доктара, без адукацыі, з горада далёка ад
+    Гомеля.</p>
+<p align="justify">Ну добра, не бяда. Гэта ж не значыць, што не трэба пазнаваць цікавае і больш прагрэсіўнае? Вядома,
+    не! Я знайшоў іншую працу :-). Гэта было звязана з сістэмным адміністраваннем, але ўсё роўна Python патрэбен
+    паўсюль!</p>
 <br>
 <h2>Задача 1.</h2>
-<p align="justify">На маёй бягучай працы ёсць праграма ў Доступ, у якой ствараецца аблік вырабаў, якія выпускаюцца
-фірма, у якой я працую. Гэтак жа гэтая праграма фармуе файлы ў фармаце XML, у якія імпартуюцца на тры сайта
-фірмы і прайс тавараў у Битрикс24. Так адбылося, што чалавек, які распрацоўвае гэта па, перастаў яго падтрымліваць. А
-заканадаўчыя змены ніхто не адмяняў, і ў назве ўсіх вырабаў неабходна было ўвесці тую, гэта такія
-вызначана сфармаваныя літары і лічбы. Г. зн. калі прасцей, неабходна ўзяць прайс і да слупка "назва" прыляпіць
-слупок "маркіроўка «потым слупок» лікавая маркіроўка «і ўсё гэта зноў запісаць у»Назва". А так як мне ўжо
-даўно хацелася паспрабаваць у python якія-небудзь бібліятэкі, якія адказваюць за формы, то я выкарыстоўваючы <b>PySimpleGUI</b>
-арганізаваў форму зносін з карыстальнікам, у дадзеным выпадку больш з самім сабой, і выкарыстоўваючы панд загружаю патрэбны
-мне прайс з xml, мадыфікую яго і запісваю назад у xml. Потым выкарыстоўваючы <b>auto-py-to-exe</b> я сканвертаваў
-скрыпт у exe, каб ён выконваўся на любых ПК пад Win. Атрымалася выдатна, вядома, калі ў цябе ёсць патрэбны прайс
-:-)</p>
-    <a class="btn btn-primary" href="{% static "portfolio/correct.py" %}" src="{% static "portfolio/correct.py" %}"
-           target="_blank">Спасылка на correct.py</a>
-    <p align="center">
-    <img name="{% static "portfolio/dj_1.png" %}" src="{% static "portfolio/py_2.png" %}" class="img-fluid" height="40%">
-    </p>
+<p align="justify">
+    На маёй папярэдняй працы ёсць праграма ў Access, у якой ажыццяўляецца разлік вырабаў, якія выпускае
+    кампанія, дзе я працаваў. Гэтая праграма таксама стварае файлы ў фармаце XML, якія імпартуюцца на тры сайты кампаніі
+    і ў прайс-ліст прадукцыі ў Bitrix24. З-за заканадаўчых змяненняў у назвах усіх вырабаў трэба было дадаць "ТУ" — гэта
+    пэўныя літары і лічбы. Карацей кажучы, трэба было ўзяць прайс-ліст і да слупка "Назва" прыляпіць слупок
+    "Маркіроўка", а потым "Лічбавая Маркіроўка" і ўсё гэта зноў запісаць у "Назва". А паколькі я ўжо даўно хацеў
+    паспрабаваць бібліятэкі Python для ўзаемадзеяння з карыстальнікам, я выкарыстаў <b>PySimpleGUI</b> для стварэння
+    формы і з дапамогай <b>pandas</b> загрузіў прайс з XML, мадыфікаваў яго і запісаў назад у XML. Потым выкарыстаў <b>auto-py-to-exe</b>
+    для ператварэння скрыпта ў EXE, каб ён запускаўся на любым ПК пад Windows. Атрымалася выдатна, калі, вядома, у цябе
+    ёсць патрэбны прайс :-)
+</p>
+<a class="btn btn-primary" href="{% static "portfolio/correct.py" %}" src="{% static "portfolio/correct.py" %}"
+target="_blank">Спасылка на correct.py</a>
+<p align="center">
+    <img name="{% static " portfolio/dj_1.png" %}" src="{% static "portfolio/py_2.png" %}" class="img-fluid"
+    height="40%">
+</p>
 
-<h2>Задача 2. </h2>
-<p align="justify">З таго самага вышэйзгаданага курса. Неабходна стварыць сайт, генеравальны паролі зададзенай доўгія з літар, верхняга ніжняга рэгістраў, лічбаў і спец знакаў
-
+<h2>Задача 2.</h2>
+<p align="justify">З таго ж самага курса. Трэба стварыць сайт, які генеруе паролі пэўнай даўжыні з літар, верхняга і
+    ніжняга рэгістраў, лічбаў і спецыяльных сімвалаў.
     <a href="https://github.com/IvShalygin/django4-password-generator/tree/master/password_gnerator_project"
        target="_blank">Спасылка на праект на GitHub.com</a>
 <p align="center">
@@ -152,13 +456,103 @@ Links to project at GitHub.com</a>
 </p>
 
 <h2>Задача 3. </h2>
-<p align="justify">Неабходна выкарыстоўваючы рэсурс прадастаўлення надвор'я даведацца надвор'е ў трох гарадах (Шарамеццева,
-Чарапаўцы і Лондане)</p>
-<a href="https://replit.com/@DarkUnicorns/getweather#main.py" target="_blank">Спасылка на рэсурс рашэння задачы</a>
-<p align="center">
-    <img name="{% static " portfolio/py_1.png" %}" src="{% static "portfolio/py_1.png" %}" height="40%" class="img-fluid"> </p>
-<hr>
-    <div class="d-flex justify-content-center">
-        <a href="{% url 'home' %} " class="btn btn-primary">Вернуться на главную страницу</a>
+<p align="justify">Трэба з дапамогай сэрвіса даведацца надвор'е ў трох гарадах (Шарамецьева, Чарапавец і Лондан).</p>
+
+<p>
+    <a href="https://replit.com/@DarkUnicorns/getweather#main.py" target="_blank">Спасылка на рашэнне</a>
+    &emsp;
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample_ex_by" role="button"
+       aria-expanded="false"
+       aria-controls="collapseExample">
+        Паглядзець код
+    </a>
+
+<div class="collapse" id="collapseExample_ex_by">
+    <div class="card card-body">
+                <pre><code>
+                import requests
+
+                def get_weather(gorod: str, language: str):
+                  payload = {"3MnTq": "", "lang": language}
+                  url = f'https://wttr.in/{gorod}'
+                  response = requests.get(url, params=payload)
+                  response.raise_for_status()
+                  return response.text
+
+
+                towns = [
+                  'Sheremetevo',
+                  'Cherepovets',
+                  'London',
+                  'Gdansk'
+                ]
+                for new_town in towns:
+                  print(get_weather(new_town, 'pl'))
+                </pre>
+        </code>
     </div>
+</div>
+</p>
+
+
+<p align="center">
+    <img name="{% static " portfolio/py_1.png" %}" src="{% static "portfolio/py_1.png" %}" height="40%"
+    class="img-fluid"> </p>
+<hr>
+<h2>Задача 4. Пакуль самая галоўная</h2>
+<p align="justify">Цяпер у мяне ёсць ідэя напісаць праграму на Python з выкарыстаннем Django для ўстановы — Гомельскага
+    Абласнога Цэнтра гігіены, эпідэміялогіі і грамадскага здароўя, дзе я працаваў 20 гадоў. Гэта галоўным чынам для
+    таго, каб прымяніць свае веды і атрымаць новыя на практыцы. Праграма павінна ахопліваць усю дзейнасць установы. На
+    маю думку, гэта было б карысна. Для мяне гэта амбіцыйная мэта. Я адчуваю сябе, як дзіця перад вялізным драконом, але
+    ў мяне ёсць свой чароўны меч — унутранае адчуванне, што гэта трэба зрабіць для сябе самога. Я пачаў з праектавання
+    базы дадзеных.
+    <a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample_base_by" role="button"
+       aria-expanded="false"
+       aria-controls="collapseExample">
+        Глядзець схему
+    </a>
+    Знаходжуся ў самым пачатку шляху.
+</p>
+<div class="collapse" id="collapseExample_base_by">
+    <div class="card card-body">
+        <p align="center">
+            <img name="{% static 'portfolio/Schema_base_CGE.png' %}" src="{% static 'portfolio/Schema_base_CGE.png' %}"
+                 height="40%"
+                 class="img-thumbnail"></p>
+    </div>
+</div>
+
+Рэалізаваў даведнік рэгіёнаў і гарадоў. Цяпер пераходжу да даведніка вуліц. Развіццё ідзе вельмі павольна, бо шмат
+чаго не ведаю і ў мяне не так шмат часу і энергіі. Але я ганаруся тым, чаго дасягнуў, і буду далей развіваць сваё
+прыкладанне.</p>
+<img name="{% static 'portfolio/My_app1.png' %}" src="{% static 'portfolio/My_app1.png' %}" height="40%"
+     class="img-thumbnail">
+
+<a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample_ex_by" role="button"
+   aria-expanded="false"
+   aria-controls="collapseExample">
+    Глядзець іншыя скрыншоты праграмы
+</a>
+
+<div class="collapse" id="collapseExample_ex_by">
+    <div class="card card-body">
+        <img name="{% static 'portfolio/My_app2.png' %}" src="{% static 'portfolio/My_app2.png' %}" height="40%"
+             class="img-thumbnail">
+        <img name="{% static 'portfolio/My_app3.png' %}" src="{% static 'portfolio/My_app3.png' %}" height="40%"
+             class="img-thumbnail">
+    </div>
+</div>
+
+
+<p></p>
+<p align="justify">
+    Свой прагрэс адлюстроўваю ў GoogleSheets.
+    <a href="https://docs.google.com/spreadsheets/d/1mk-VYJ1E6uzebwUrppiaUG7wp2nFHneybm0ymUsSI9g/edit?usp=drive_link"
+       target="_blank"><b>Паглядзець тут</b></a>
+</p>
+
+<div class="d-flex justify-content-center">
+    <a href="{% url 'home' %} " class="btn btn-primary">Вярнуцца на галоўную старонку</a>
+</div>
+
 {% endblock%}
