@@ -1,7 +1,7 @@
-asgiref==3.6.0
-backports.zoneinfo==0.2.1
-Django==4.1.6
-Pillow==9.4.0
-python-dotenv==1.0.0
-sqlparse==0.4.3
-tzdata==2022.7
+asgiref==3.8.1
+Django==5.1.1
+django-modeltranslation==0.19.9
+pillow==10.4.0
+python-gettext==5.0
+sqlparse==0.5.1
+tzdata==2024.1
