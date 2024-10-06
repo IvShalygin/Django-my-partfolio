@@ -2,16 +2,54 @@
 
 {% load static %}
 
+{% block content_pl_version %}
+<p align="justify">
+    Czym jest to całe… administrowanie systemem? Tak, trzeba wziąć komputer, skonfigurować wszystko na raz i zapomnieć o tym komputerze. Nikogo nie widzieć, nie rozmawiać z nikim, tylko jednostajny szum wentylatorów, głowic HDD i migające diody na komputerach i przełącznikach. Idealna praca dla flegmatycznych melancholijnych introwertyków.
+</p>
+<p align="center">
+    <img name="{% static 'portfolio/adm_1.jpg' %}" src="{% static 'portfolio/adm_1.jpg' %}" class="img-fluid" ata-bs-toggle="tooltip" title="Zdjęcie z internetu. Dzięki tej osobie za niewzruszoność, a fotografowi za kunszt">
+</p>
+<div class="clearfix">
+    <img name="{% static 'portfolio/admin_2.jpg' %}" src="{% static 'portfolio/admin_2.jpg' %}" class="col-md-3 float-md-end mb-2 ms-md-2 img-fluid">
+    <p align="justify">
+        Ale tak naprawdę, to co powyżej opisane, to tylko część pracy administratora systemu. Po pierwsze, od razu wszystko skonfigurować nie da się, bo nie wszystko jest wiadome, a na dodatek, jesteś tylko człowiekiem :). Po drugie, wszystko się zmienia, a to, co było wczoraj, zupełnie nie przypomina tego, co potrzebne dzisiaj. Po trzecie, wszystko się psuje, absolutnie wszystko, zwłaszcza jeśli zostało tak zaprojektowane, żeby jego żywotność była krótka. Po czwarte... hmm, wcale nie jestem flegmatykiem ani introwertykiem – lubię pracę zespołową, i to już jest moja osobista cecha.
+    </p>
+    <p align="justify">
+        Niezależnie od tego, jak dziwny jesteś – administrator systemu to osoba odpowiedzialna za wsparcie techniczne oraz współpracę z innymi ludźmi. To komunikacja, zrozumienie i wspólne osiąganie celów z innymi.
+    </p>
+</div>
+<div class="clearfix">
+    <img name="{% static 'portfolio/A3E7.gif' %}" src="{% static 'portfolio/A3E7.gif' %}" class="col-md-2 float-md-start mb-4 me-4 img-fluid">
+    <p align="justify">
+        Jestem administratorem systemu Windows, mam podstawową wiedzę o Linuxie, ale pracuję w tym kierunku: tworzę maszyny wirtualne i próbuję rozwiązywać na nich różne codzienne zadania (dostęp SSH, SMB, VPN-wireguard, nginx, php, mysql).
+    </p>
+    <p align="justify">
+        Wszystkie systemy operacyjne działają fizycznie na sprzęcie, a moim zadaniem jest zrozumienie, jak to działa, identyfikacja uszkodzonych komponentów, testowanie ich, wymiana, utrzymanie sprzętu w czystości, łączenie komputerów w sieci i zapewnienie sprawnego działania tej sieci.
+    </p>
+    <p align="justify">
+        Pomagam użytkownikom i trochę ich kontroluję. Przeprowadzam obrzędy z tańcami, czasem z bębenkiem.
+    </p>
+    <p align="justify">
+        A osobiście, lubię pracować w zespole.
+    </p>
+</div>
+<hr>
+<div class="d-flex justify-content-center">
+    <a href="{% url 'home' %}" class="btn btn-primary">Powrót do strony głównej</a>
+</div>
+
+{% endblock %}
+
 {% block content_ru_version %}
 <p align="justify">Что такое это вот.. системное администрирование? Да, это нужно взять ПК, настроить прям сразу всё-всё
     и забыть про этот ПК. Никого не видеть, не общаться и только мерный гул кулеров, головок HDD и свет диодов на ПК и
     switches. Идеальная работа для флегматично-меланхоличных интровертов.</p>
 <p align="center">
-    <img name="{% static " portfolio/adm_1.jpg" %}" src="{% static "portfolio/adm_1.jpg" %}" class="img-fluid"
+    <img name="{% static 'portfolio/adm_1.jpg' %}" src="{% static "portfolio/adm_1.jpg" %}" class="img-fluid"
     ata-bs-toggle="tooltip" title="Картинка из инета. Спасибо этому человеку за невозмутимость, а фотографу за мастерство" >
 </p>
 <div class="clearfix">
-   <img name="{% static " portfolio/admin_2.jpg" %}" src="{% static "portfolio/admin_2.jpg" %}" class="col-md-3
+   <img name="{% static "portfolio/admin_2.jpg" %}" src="{% static "portfolio/admin_2.jpg" %}" class="col-md-3
     float-md-end mb-2 ms-md-2 img-fluid" >
 <p align="justify">Но на самом деле вышеописанное это часть работы системного администратора. Во-первых, сразу всё-всё
     точно не получится, потому что не все известно, а еще ты оказывается человек :). Во-вторых, все изменяется и то что
@@ -23,7 +61,7 @@
     людьми.</p>
 </div>
 <div class="clearfix">
-    <img name="{% static " portfolio/A3E7.gif" %}" src="{% static "portfolio/A3E7.gif" %}" class="col-md-2
+    <img name="{% static "portfolio/A3E7.gif" %}" src="{% static "portfolio/A3E7.gif" %}" class="col-md-2
     float-md-start mb-4 me-4 img-fluid" >
 <p align="justify">Я системный администратор ПК Windows, я не много знаю Linux, но я работаю в этом направлении: ставлю
     виртуальные машины и пытаюсь решить на них разные обыденные задачи (доступ SSH, SMB, vpn-wireguard, nginx, php,
@@ -46,11 +84,11 @@
     and forget about this PC. Not to see anyone, not to communicate, and only the measured hum of coolers, HDD heads and light diodes on a PC and
     switches. An ideal job for phlegmatic and melancholic introverts.</p>
 <p align="center">
-    <img name="{% static " portfolio/adm_1.jpg" %}" src="{% static "portfolio/adm_1.jpg" %}" class="img-fluid"
+    <img name="{% static "portfolio/adm_1.jpg" %}" src="{% static "portfolio/adm_1.jpg" %}" class="img-fluid"
     ata-bs-toggle="tooltip" title="A picture from the Internet. Thanks to this man for his equanimity, and to the photographer for his skill" >
 </p>
 <div class="clearfix">
-   <img name="{% static " portfolio/admin_2.jpg" %}" src="{% static "portfolio/admin_2.jpg" %}" class="col-md-3
+   <img name="{% static "portfolio/admin_2.jpg" %}" src="{% static "portfolio/admin_2.jpg" %}" class="col-md-3
     float-md-end mb-2 ms-md-2 img-fluid" >
 <p align="justify">But in fact, the above is part of the work of a system administrator. First of all, everything at once-everything
 it definitely won't work, because not everything is known, and you also happen to be a person :). Secondly, everything changes and the fact that
@@ -61,7 +99,7 @@ this is a personal characteristic.</p>
 work to support equipment and people working with it. This is communication, understanding and achieving goals together with others people.</p>
 </div>
 <div class="clearfix">
-    <img name="{% static " portfolio/A3E7.gif" %}" src="{% static "portfolio/A3E7.gif" %}" class="col-md-2
+    <img name="{% static "portfolio/A3E7.gif" %}" src="{% static "portfolio/A3E7.gif" %}" class="col-md-2
     float-md-start mb-4 me-4 img-fluid" >
 <p align="justify">I am a system administrator of a Windows PC, I know Linux a little, but I am working in this direction: I put
     virtual machines and trying to solve various everyday tasks on them (SSH access, SSL, vpn-fireguard, nginx, php,
@@ -84,11 +122,11 @@ mysql). </p>
 і забыцца пра гэты ПК. Нікога не бачыць, не кантактаваць і толькі мерны гул кулераў, галовак HDD і святло дыёдаў на ПК і
 switches. Ідэальная праца для флегматычна-меланхалічных інтравертаў..</p>
 <p align="center">
-    <img name="{% static " portfolio/adm_1.jpg" %}" src="{% static "portfolio/adm_1.jpg" %}" class="img-fluid"
+    <img name="{% static "portfolio/adm_1.jpg" %}" src="{% static "portfolio/adm_1.jpg" %}" class="img-fluid"
     ata-bs-toggle="tooltip" title="Карцінка з інэту. Дзякуй гэтаму чалавеку за спакой, а фатографу за майстэрства" >
 </p>
 <div class="clearfix">
-   <img name="{% static " portfolio/admin_2.jpg" %}" src="{% static "portfolio/admin_2.jpg" %}" class="col-md-3
+   <img name="{% static "portfolio/admin_2.jpg" %}" src="{% static "portfolio/admin_2.jpg" %}" class="col-md-3
     float-md-end mb-2 ms-md-2 img-fluid" >
 <p align="justify">Aле на самой справе вышэйапісанае гэта частка працы сістэмнага адміністратара. Па-першае, адразу ўсё-ўсё
 дакладна не атрымаецца, таму што не ўсё вядома, а яшчэ ты аказваецца чалавек :). Па-другое, усё змяняецца і тое што
@@ -100,7 +138,7 @@ switches. Ідэальная праца для флегматычна-мелан
 чалавек.</p>
 </div>
 <div class="clearfix">
-    <img name="{% static " portfolio/A3E7.gif" %}" src="{% static "portfolio/A3E7.gif" %}" class="col-md-2
+    <img name="{% static "portfolio/A3E7.gif" %}" src="{% static "portfolio/A3E7.gif" %}" class="col-md-2
     float-md-start mb-4 me-4 img-fluid" >
 <p align="justify">Я сістэмны адміністратар ПК Windows, я не шмат ведаю Linux, але я працую ў гэтым кірунку: стаўлю
 віртуальныя машыны і спрабую вырашыць на іх розныя звычайныя задачы (доступ SSH, SMB, vpn-wireguard, nginx, php,
