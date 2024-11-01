@@ -50,10 +50,7 @@ msgid "Blog"
 msgstr "Блог"
 
 msgid "Portfolio"
-msgstr "Партфоліа"
+msgstr "Партфоліё"
 
-msgid "My projects in VBA"
-msgstr "Мае праекты ў VBA"
-
-msgid "Back to the list of blogs"
-msgstr "Вярнуцца назад да спісу блогаў"
+msgid "Change Language"
+msgstr "Змяніць мову"
