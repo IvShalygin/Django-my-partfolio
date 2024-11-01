@@ -36,7 +36,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "Jan Shalygin is a wonderful person, making it a joy to both live and work with him"
-msgstr ""
+msgstr "Jan Shalygin is a wonderful person, making it a joy to both live and work with him"
 
 msgid "Jan Shalygin"
 msgstr "Jan Shalygin"
@@ -52,3 +52,6 @@ msgstr "Portfolio"
 
 msgid "My projects in VBA"
 msgstr "My projects in VBA"
+
+msgid "Back to the list of blogs"
+msgstr "Back to the list of blogs"
