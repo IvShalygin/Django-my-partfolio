@@ -58,5 +58,5 @@ msgstr "Мои проекты в VBA"
 msgid "Back to the list of blogs"
 msgstr "Вернуться назад к списку блогов"
 
-msgid "Back to the list of blogs"
+msgid "Back to home page"
 msgstr "Вернуться на главную страницу"
